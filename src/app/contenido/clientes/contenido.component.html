@@ -1,0 +1,46 @@
+
+
+<div class="card border-primary mb-3 h-100">
+  <div class="card-header fw-bold fs-3 text-success text-center">
+    Clientes
+  </div>
+  <div class="card-body text-primary">
+    <h5>Listado de Clientes</h5>
+
+    <div class="my-2 text-left">
+      <button
+        class="btn btn-rounded btn-primary"
+        type="button"
+        [routerLink]="['/clientes/crear']"
+        >
+          Nuevo Cliente
+      </button>
+    </div>
+    <table class="table table-success table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Inscription Date</th>
+          <th class="text-center" scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cliente of clientes">
+          <th scope="row">{{cliente.id}}</th>
+          <td>{{ cliente.nombre }}</td>
+          <td>{{ cliente.apellido }}</td>
+          <td>{{ cliente.email }}</td>
+          <td>{{ cliente.createdAt }}</td>
+          <td class="text-center">
+            <button class="btn btn-primary" [routerLink]="['/clientes/crear']">Create</button>
+            <button class="btn btn-danger m-md-4">Delete</button>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
